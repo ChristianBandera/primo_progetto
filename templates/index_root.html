@@ -1,22 +1,11 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index Root</title>
-</head>
-<body>
-    <!--
-    Spiegazione: l'istruzione consente di inserire dinamicamente 
-    un link senza doverlo scrivere noi. Si usa il namespace (app_name) 
-    definito in primo_progetto/urls.py seguito dai due punti e poi dal 
-    name dell’url definito in prima_app/urls.py
-    -->
-    
-    <ol>
+{% extends "base.html" %}
+
+{%block title%} {{block.super}} | Index root {%endblock title %}
+
+{%block content%}
+   <ol>
         <li><a href ="/admin">Pannello admin</a></li>
         <li><a href ="{% url 'prima_app:index'%}">Index Prima App</a></li>
         <li><a href ="{% url 'seconda_app:index'%}">Index Seconda App</a></li>
     </ol>
-</body>
-</html>
+{%endblock content%}
