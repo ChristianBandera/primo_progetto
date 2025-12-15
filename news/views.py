@@ -40,7 +40,7 @@ def home(request):
     return HttpResponse("<h1>" + response + "</h1>")
 """
 
-def home(request):
+def homepage(request):
     articoli= Articolo.objects.all()
     giornalisti= Giornalista.objects.all()
     context= {"articoli": articoli, "giornalisti": giornalisti}
@@ -52,3 +52,7 @@ def articoloDetailView(request, pk):
     articolo= get_object_or_404(Articolo, pk=pk)
     context = {"articolo": articolo}
     return render(request, "articolo_detail.html", context)
+
+
+def index(request):
+    return render(request, "news/index.html")
