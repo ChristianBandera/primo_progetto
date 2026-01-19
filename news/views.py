@@ -58,8 +58,13 @@ def listaArticoli(request, pk=None):
         articoli= Articolo.objects.all()
     else:
         articoli= Articolo.objects.filter(giornalista_id=pk)
+    if pk==None:
+        is_giornalista= False
+    else:
+        is_giornalista=True
     context = {
         "articoli" : articoli,
+        "is_giornalista": is_giornalista
     }
     return render(request, "news/lista_articoli.html", context)
 
