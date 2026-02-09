@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{%block title%} {{block.super}} | Voti degli studenti {%endblock title %}
+
+{%block content%}
+    <ul>
+    {% for nome_studente, lista_voti in voti.items %}
+        {{ nome_studente }}
+        <ul>
+            {% for materia in lista_voti %}
+                <li>
+                    Materia: {{ materia.0 }} | Voto: {{ materia.1 }} | Assenze: {{ materia.2 }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+    </ul>
+{%endblock content%}
