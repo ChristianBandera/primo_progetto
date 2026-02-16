@@ -63,6 +63,8 @@
             <div class="dropdown-menu" aria-labelledby="NewsDropdownMenuLink">
               <a class="dropdown-item" href="{% url 'news:index' %}">Index</a>
               <a class="dropdown-item" href="{% url 'news:homepage' %}">Homepage</a>
+              <a class="dropdown-item" href="{% url 'news:query_base' %}">Query</a>
+              <a class="dropdown-item" href="{% url 'news:lista_articoli' %}">Lista Articoli</a>
             </div>
           </li>
 
@@ -71,6 +73,10 @@
             <a class="nav-link dropdown-toggle" href="#" id="VotiDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Voti</a>
             <div class="dropdown-menu" aria-labelledby="VotiDropdownMenuLink">
               <a class="dropdown-item" href="{% url 'voti:index' %}">Index</a>
+              <a class="dropdown-item" href="{% url 'voti:materie' %}">Materie</a>
+              <a class="dropdown-item" href="{% url 'voti:max_min' %}">Max Min</a>
+              <a class="dropdown-item" href="{% url 'voti:media' %}">Media</a>
+              <a class="dropdown-item" href="{% url 'voti:votiS' %}">Voti Studenti</a>
             </div>
           </li>
 
