@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{%block title%} {{block.super}} | Voti massimi e minimi {%endblock title %}
+
+{%block content%}
+    <h1>Verifiche</h1>
+    <h2>Risultati</h2>
+
+    <ul>
+        <li>Voto massimo: {{ max }}</li>
+        <li>Materia/e con voto massimo: 
+            {% for materia in materieMax %} {{ materia }} {% if not forloop.last %}, {% endif %}
+            {% endfor %} 
+        </li>
+        <li>Studente/i con voto massimo: {% for studente in studentiMax %} {{ studente }} {% if not forloop.last %}, {% endif %}
+            {% endfor %}
+        </li>
+        <li>Voto minimo: {{ min }}</li>
+        <li>Materia/e con voto minimo: {% for materia in materieMin %} {{ materia }} {% if not forloop.last %}, {% endif %}
+            {% endfor %}  
+        </li>
+        <li>Studente/i con voto minimo: {% for studente in studentiMin  %} {{ studente }} {% if not forloop.last %}, {% endif %}
+            {% endfor %}
+        </li>
+    </ul>
+{%endblock content%}

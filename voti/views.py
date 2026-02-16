@@ -41,22 +41,42 @@ def view_d(request):
     max=0
     min=100
 
-    massimi={}
-    minimi={}
+    min= 10000
+    max=0
+    materieMax = []
+    studentiMax = []
+    materieMin= []
+    studentiMin = []
 
     for nome_studente, lista_voti in voti.items():
         for materia in lista_voti:
             #max
             if(materia[1] > max):
                 max = materia[1]
-                massimi[nome_studente] = max
+                
             #min
             elif(materia[1] < min):
                 min = materia[1]
-                minimi[nome_studente] = min
+
+    for nome_studente, lista_voti in voti.items():
+        for materia in lista_voti:
+            #max
+            if(materia[1] == max):
+                materieMax.append(materia[0])
+                studentiMax.append(nome_studente)
+                
+            #min
+            elif(materia[1] == min):
+                materieMin.append(materia[0])
+                studentiMin.append(nome_studente)
+                
 
     context={
-        'massimi' : massimi,
-        'minimi' : minimi
+        'max' : max,
+        'min' : min,
+        'materieMax' : materieMax,
+        'materieMin' : materieMin,
+        'studentiMax' : studentiMax,
+        'studentiMin' : studentiMin
     }
     return render(request, "voti/max_min.html", context)
