@@ -38,8 +38,6 @@ def view_c(request):
 
 def view_d(request):
     voti = get_voti()
-    max=0
-    min=100
 
     min= 10000
     max=0
