@@ -22,3 +22,6 @@ def todos_views(request):
         'todos' : lista_todos,
         'errore' : messaggio_errore
     })
+
+def index(request):
+    return render(request, 'api/index.html')
