@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{%block title%} {{block.super}} | Spotify {%endblock title %}
+
+{%block content%}
+    {% for immagine in img %}
+        <img src="immagine">
+    {% endfor %}
+{%endblock content%}
